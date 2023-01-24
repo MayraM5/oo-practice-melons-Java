@@ -2,8 +2,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Instantiate objects here!");
-	}
-	
+
 		MelonType muskmelon = new MelonType(
 			"musk", 
 			"Muskmelon", 
@@ -50,8 +49,23 @@ public class Main {
 		Melon melon6 = new Melon(melonTypes[0], 6, 7, 4, "Michael");
 		Melon melon7 = new Melon(melonTypes[3], 7, 10, 3, "Sheila");
 
-		// public static void getSellabilityReport(Melon[] melons){
-		// 	//for each melon  
+		Melon[] melonArray = {melon1, melon2, melon3, melon4, melon5, melon6, melon7};
+		getSellabilityReport(melonArray);
+	}
 
-		}
+		public static void getSellabilityReport(Melon[] melonArray){
+			//for each melon  
+			//for (type variableName : arrayName) {
+			for(Melon melon: melonArray) {
+				String sellable;
+
+				if (melon.isSellable()) {
+					sellable = "CAN BE SOLD";
+				} else {
+					sellable = "NOT SELLABLE";
+				}
+
+			System.out.println("Harvested by " + melon.harvester + " from Field " + melon.field + " (" + sellable + ")" );  
+			}
+	}
 }
